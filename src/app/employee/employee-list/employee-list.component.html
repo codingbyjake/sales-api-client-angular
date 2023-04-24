@@ -1,8 +1,11 @@
 <div id="component">
     <header>
+        <app-menubar></app-menubar>
         <span id="pageTitle">{{ pageTitle }}</span>
         <span> | </span>
         <a routerLink="/employee/create" class="">Create New</a>
+        <span> | </span>
+        <a routerLink="/employee/login" class="">Logout</a>
     </header>
     <table class="table table-striped table-sm">
         <thead>

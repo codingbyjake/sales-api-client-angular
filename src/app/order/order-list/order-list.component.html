@@ -1,0 +1,36 @@
+<div id="component">
+    <header>
+        <app-menubar></app-menubar>
+        <span id="pageTitle">{{ pageTitle }}</span>
+        <span> | </span>
+        <a routerLink="/order/create" class="">Create New</a>
+        <span> | </span>
+    </header>
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Customer Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let o of orders">
+                <td>{{ o.id }}</td>
+                <td>{{ o.date | date }}</td>
+                <td>{{ o.description }}</td>
+                <td>{{ o.total | currency }}</td>
+                <td>{{ o.status }}</td>
+                <td>{{ o.customer?.name }}</td>
+                <td>
+                    <a routerLink="/order/detail/{{ o.id }}">Det</a>
+                    <span> | </span>
+                    <a routerLink="/order/change/{{ o.id }}">Chg</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
