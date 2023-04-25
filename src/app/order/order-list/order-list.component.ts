@@ -27,7 +27,25 @@ export class OrderListComponent {
     this.sortColumn = col;
   }
 
-  ngOnInit(): void {
+  review(order: Order): void{
+    if(order.total <= 75){
+      order.status = "APPROVED";
+    }else{
+      order.status = "REVIEW";
+    }
+    this.ordSvc.change(order).subscribe({
+      next: (res) => {
+        console.debug("Order Reviewed");
+        this.refresh();
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    })
+
+  }
+
+  refresh(): void {
     this.ordSvc.list().subscribe({
       next: (res) => {
         console.debug("Order", res);
@@ -39,8 +57,11 @@ export class OrderListComponent {
       error: (err) => {
         console.error(err);
       }  
-      
     });
+  }
+
+  ngOnInit(): void {
+    this.refresh();
   }
 
 }

@@ -16,6 +16,7 @@ import { OrderDetailComponent } from './order/order-detail/order-detail.componen
 import { OrderChangeComponent } from './order/order-change/order-change.component';
 import { OrderCreateComponent } from './order/order-create/order-create.component';
 import { SortPipe } from './pipe/sort.pipe';
+import { OrderLinesComponent } from './order/order-lines/order-lines.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SortPipe } from './pipe/sort.pipe';
     OrderDetailComponent,
     OrderChangeComponent,
     OrderCreateComponent,
-    SortPipe
+    SortPipe,
+    OrderLinesComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

@@ -29,6 +29,10 @@
                     <a routerLink="/order/detail/{{ o.id }}">Det</a>
                     <span> | </span>
                     <a routerLink="/order/change/{{ o.id }}">Chg</a>
+                    <span> | </span>
+                    <button (click)="review(o)" class="btn btn-link">Review</button>
+                    <span> | </span>
+                    <a routerLink="/order/lines/{{ o.id }}">Lines</a>
                 </td>
             </tr>
         </tbody>
