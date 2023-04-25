@@ -12,7 +12,7 @@
                 </tr>
                 <tr>
                     <td>Date</td>
-                    <td><input [(ngModel)]="order.date" readonly></td>
+                    <td><input [ngModel]="order.date | date" readonly></td>
                 </tr>
                 <tr>
                     <td>Description</td>
@@ -20,7 +20,7 @@
                 </tr>
                 <tr>
                     <td>Total</td>
-                    <td><input [(ngModel)]="order.total" readonly></td>
+                    <td><input [ngModel]="order.total | currency" readonly></td>
                 </tr>
                 <tr>
                     <td>Status</td>

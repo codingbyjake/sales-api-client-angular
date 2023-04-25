@@ -26,8 +26,8 @@ export class OrderCreateComponent {
     this.order.customerId = Number(this.order.customerId);
     this.ordSvc.create(this.order).subscribe({
       next: (res) =>{
-        console.debug("Order createdddd!")
-        this.router.navigateByUrl("/order/list")  
+        console.debug("Order createdddd!");
+        this.router.navigateByUrl("/order/list")  ;
       },
       error: (err) => {
         console.error(err);

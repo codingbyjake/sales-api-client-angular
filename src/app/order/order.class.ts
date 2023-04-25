@@ -9,4 +9,5 @@ export class Order {
     
     customerId: number = 0;
     customer: Customer | null = null;
+    customerName!: string;
 }
